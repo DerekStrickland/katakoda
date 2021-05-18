@@ -2,7 +2,7 @@
 
 In this lab you will perform all the steps needed to deploy two Consul datacenters in two different Kubernetes clusters and federate them using mesh gateways.
 
-The lab uses Shipyard to deploy the clusters but the commands can be applied to any Kubernetes flavor.
+The lab uses Shipyard to deploy the clusters, but the commands can be applied to any Kubernetes flavor.
 
 If you are already familiar with the basics of Consul, [Federation Between Kubernetes Clusters](https://www.consul.io/docs/k8s/installation/multi-cluster/kubernetes) provides a reference guide for the steps performed in this lab.
 

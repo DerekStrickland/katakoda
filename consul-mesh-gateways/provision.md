@@ -7,7 +7,7 @@ next step.
 ```screenshot
 [timestamp] - Installing Helm 3.2.1
 [timestamp] - Installing Kubectl v1.18.4
-[timestamp] - Installing Shipyard 0.0.33
+[timestamp] - Installing Shipyard 0.3.7
 [timestamp] - Running Scenario
 ...
  <Kubernetes clusters creation logs>
