@@ -102,5 +102,5 @@
     "imageid": "hashicorp-hashistack",
     "lifetime": 30
   },
-  "private": true
+  "private": false
 }
