@@ -1,7 +1,8 @@
 
 Once the services are both up and running you can access them using port `9090` of the lab machine.
 
-Open [Web frontend](https://[[HOST_SUBDOMAIN]]-9090-[[KATACODA_HOST]].environments.katacoda.com/ui) to reach service `web` interface and make sure it can reach the `api` backend.
+Open [Web frontend](https://[[HOST_SUBDOMAIN]]-9090-[[KATACODA_HOST]].environments.katacoda.com/ui)
+to reach service `web` interface and make sure it can reach the `api` backend.
 
 
 <div style="background-color:#eff5ff; color:#416f8c; border:1px solid #d0e0ff; padding:1em; border-radius:3px; margin:24px 0;">

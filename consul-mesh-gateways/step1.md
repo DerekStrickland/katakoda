@@ -16,7 +16,7 @@ Note the following settings:
 * The server key contains parameters related to the server pods. The chart is configured to create one Consul server per Kubernetes node.
 * The Consul service mesh is enabled by setting the connectInject key to true. When the service mesh connect injector is installed, then a sidecar proxy is automatically added to all pods.
 * The ui section enables Consul web UI.
-* The meshGateway section defines the deploy of a Consul mesh gateway that will be used for the communications to and from the secondary datacenter you will deploy later in this lab.
+* The meshGateway section defines a Consul mesh gateway that will be used for the communications to and from the secondary datacenter you will deploy later in this lab.
 
 ### Deploy primary datacenter (`dc1`)
 
@@ -26,7 +26,7 @@ Make sure your kubectl is configured to point to the right Kubernetes cluster:
 
 You will use `helm install` to deploy Consul using the configuration defined in `dc1-values.yml`. This should only take a few minutes.
 
-`helm install -f ./dc1-values.yml consul hashicorp/consul --version "0.22.0" --timeout 10m`{{execute}}
+`helm install -f ./dc1-values.yml consul hashicorp/consul --version "0.31.1" --timeout 10m`{{execute}}
 
 #### Verify the Consul deployment
 
@@ -55,4 +55,24 @@ consul-connect-injector-webhook-deployment-546d67b476-rnj8k   1/1     Running   
 consul-server-0                                               1/1     Running   0          69s
 consul-2rkgj                                                  1/1     Running   0          69s
 consul-mesh-gateway-b95f65ff7-cmjkd                           2/2     Running   0          71s
+```
+
+In the tutorial folder there is a file named `proxy-defaults.yaml` that contains a CRD
+specification that globally configures all proxies to run in `local` mode.
+
+```
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ProxyDefaults
+metadata:
+  name: global
+spec:
+  meshGateway:
+    mode: local
+```
+
+Use `kubectl` to apply the CRD.
+
+```shell-session
+$ kubectl apply -f proxy-defaults.yml
+proxydefaults.consul.hashicorp.com/global created
 ```

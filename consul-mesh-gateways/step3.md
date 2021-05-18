@@ -26,5 +26,12 @@ This hands-on lab comes with a prepared configuration.
 
 You will use `helm install` to deploy Consul using the configuration defined in `dc2-values.yml`. This should only take a few minutes.
 
-`helm install -f ./dc2-values.yml consul hashicorp/consul --version "0.22.0" --timeout 10m`{{execute}}
+`helm install -f ./dc2-values.yml consul hashicorp/consul --version "0.31.1" --timeout 10m`{{execute}}
+
+Use `kubectl` to apply the `ProxyDefaults` CRD to the secondary datacenter.
+
+```shell-session
+$ kubectl apply -f proxy-defaults.yml
+proxydefaults.consul.hashicorp.com/global created
+```
 

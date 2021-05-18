@@ -1,6 +1,8 @@
 To verify the two datacenter are actively working and routing traffic through the mesh gateways you will use two services, `api` and `web`.
 
-The two services represent a simple two-tier application made of a backend api service and a frontend that communicates with the api service over HTTP and exposes the results in a web ui.
+The two services represent a simple two-tier application made of a backend api service,
+and a frontend that communicates with the api service over HTTP and exposes the
+results in a web ui.
 
 #### Review the backend service configuration
 

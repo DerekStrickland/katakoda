@@ -38,7 +38,7 @@ mv ./kubectl /usr/local/bin/kubectl
 
 ## ================================
 
-export SHIPYARD_VERSION="0.0.33"
+export SHIPYARD_VERSION="0.3.7"
 
 log "Installing Shipyard ${SHIPYARD_VERSION}"
 
